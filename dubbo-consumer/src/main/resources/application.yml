@@ -1,0 +1,13 @@
+server:
+  port: 80
+  servlet:
+    context-path: /dubbo-consumer
+application:
+  version: 1.0.0
+spring:
+  dubbo:
+    application:
+      name: dubbo-consumer
+    registry:
+      address: zookeeper://java.zk2.51talk.com:2181?backup=java.zk1.51talk.com:2181,java.zk3.51talk.com:2181 #zookeeperµÿ÷∑
+    scan: com.talkplatform.dubbo.consumer.controller

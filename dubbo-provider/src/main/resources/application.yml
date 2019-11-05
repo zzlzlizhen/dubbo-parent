@@ -1,0 +1,17 @@
+server:
+  port: 8080 #Tomcat端口
+  servlet:
+    context-path: /dubbo-provider
+application:
+  version: 1.0.0
+spring:
+  dubbo:
+    application:
+      name: dubbo-provider
+    registry:
+      address: zookeeper://java.zk2.51talk.com:2181?backup=java.zk1.51talk.com:2181,java.zk3.51talk.com:2181 #zookeeper地址
+    protocol:
+      name: dubbo
+      port: 20890 #dubbo服务暴露的端口
+    scan: com.talkplatform.dubbo.provider.impl
+
