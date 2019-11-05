@@ -1,1 +1,7 @@
 # dubbo-parent
+基于springboot整合的dubbo服务工程。
+api接口
+common公共逻辑代码
+entity实体服务对象
+consumer微服务的服务发现调用端
+provider微服务的服务注册提供端
