@@ -5,6 +5,8 @@ server:
 application:
   version: 1.0.0
 spring:
+  profiles:
+    active: @env@
   dubbo:
     application:
       name: dubbo-provider
@@ -14,4 +16,23 @@ spring:
       name: dubbo
       port: 20890 #dubbo服务暴露的端口
     scan: com.talkplatform.dubbo.provider.impl
+
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  type-aliases-package: com.talkplatform.dubbo.entity
+
+spring.datasource.course:
+  url: jdbc:mysql://${jdbc.course.db}?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
+  username: ${jdbc.course.username}
+  password: ${jdbc.course.password}
+
+spring.datasource.course.write:
+  url: jdbc:mysql://${jdbc.course.write.db}?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
+  username: ${jdbc.course.write.username}
+  password: ${jdbc.course.write.password}
+
+spring.datasource.textbook:
+  url: jdbc:mysql://${jdbc.textbook.db}?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&useSSL=false
+  username: ${jdbc.textbook.username}
+  password: ${jdbc.textbook.password}
 
